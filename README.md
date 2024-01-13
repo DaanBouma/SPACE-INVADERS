@@ -2,4 +2,4 @@
 JS-GAME-DAAN-BOUMA
 
 
-[here](#place-2)
+[Click to play this game!](https://daanbouma.github.io/SPACE-INVADERS/index.html)
