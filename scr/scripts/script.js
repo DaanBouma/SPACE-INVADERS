@@ -205,7 +205,7 @@ function createPlayer(container) {
     GAME_STATE.playerX = GAME_WIDTH / 2;
     GAME_STATE.playerY = GAME_HEIGHT - 50;
     const player = document.createElement("img");
-    player.src = "../../scr/assets/PNG/playerShip1_blue.png";
+    player.src = "../../scr/img/playerShip1_blue.png";
     player.className = "player";
     player.style.width = "40px";
     container.appendChild(player);
