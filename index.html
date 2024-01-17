@@ -1,65 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>space invaders</title>
     <link rel="icon" href="/scr/assets/PNG/Enemies/enemyBlue3.png">
-
     <link rel="stylesheet" href="scr/styles/style.css">
     <link rel="stylesheet" href="scr/styles/waves.css">
-  <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Inconsolata" />
 </head>
 
 <body>
 
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////                  Body                                ///////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////// -->
+
     <div class="wrap">
         <div class="game-wrapper">
+            <div id="icons">
+                <div class="icons2">
+                    <img class="shield" id="shield1" src="scr/assets/start/shield.png" alt="">
+                    <img class="shield" id="shield2" src="scr/assets/start/shield.png" alt="">
+                    <img class="shield" id="shield3" src="scr/assets/start/shield.png" alt="">
+                </div>
+
+            </div>
             <div class="game">
+                <div id="notificationBar">
+                    <img id="wave1Dif" src="scr/assets/start/difficulityWave1.png" alt="">
+                    <img id="wave2Dif" src="scr/assets/start/difficulityWave2.png" alt="">
+                    <img id="wave3Dif" src="scr/assets/start/difficulityWave3.png" alt="">
+                    <img id="wave4Dif" src="scr/assets/start/difficulityWave4.png" alt="">
+                    <img id="wave5Dif" src="scr/assets/start/difficulityWave5.png" alt="">
+                    <img id="wave6Dif" src="scr/assets/start/difficulityWave6.png" alt="">
+                    <img id="wave7Dif" src="scr/assets/start/difficulityWave7.png" alt="">
+                </div>
+                <div id="notification">
+                    <img src="scr/assets/start/shieldnotifi.png" alt="">
+                </div>
+                <div id="notification2">
+                    <img src="scr/assets/start/controlls.png" alt="">
+                </div>
+                <div id="game_controlls_total">
+                    <img id="controllsbackground" src="scr/assets/start/controllspage.png" alt="">
+                    </button>
+                </div>
                 <div id="game_start_total">
+                    <img id="startingbackground" src="scr/assets/start/backgroundstart.png" alt="">
                     <div id="top-total">
-                        <img src="scr/assets/start/startimg.png" alt="">
+                        <img id="startimgstartingscreen" src="scr/assets/start/startimg.png" alt="">
                         <button id="startbuttonimg">
                             <img class="startbuttonimg" src="scr/assets/start/startbutton.png" alt="">
                         </button>
-
                     </div>
                     <div id="bot_total">
-                        <!-- <img class="startbuttonimg2" src="/scr/assets/start/pressstart.png" alt=""> -->
                     </div>
                     </button>
                 </div>
                 <div id="game_over_total">
+                    <img id="restartbackgroundimage" src="scr/assets/start/restartbackground.png" alt="">
                     <div id="total_game_over_mid">
+
+
                         <div class="box_total_top">
                             <img id="highscore" src="scr/assets/start/highscore.png" alt="">
                             <h1 id="Score_Text">500</h1>
+                            <img id="youdiedtext" src="scr/assets/start/died.png" alt="">
                         </div>
-                        <div class="box_total_bot">
-                            <img src="scr/assets/start/died.png" alt="">
-                            <button onclick="restartGame()" id="restartButton">
-                                <img src="scr/assets/start/restartbutton.png" alt="">
-                            </button>
-                        </div>
+                        <button onclick="restartGame()" id="restartButton">
+                            <img src="scr/assets/start/restartbutton.png" alt="">
+                        </button>
                     </div>
-
                 </div>
-
-
+                <div id="Victory_total">
+                    <img id="victorybackgroundimage" src="scr/assets/start/victoryBackground.png" alt="">
+                    <div id="total_game_over_mid">
+                        <div class="box_total_top_Vic">
+                            <img id="victorytext" src="scr/assets/start/UltimateScoreText.png" alt="">
+                            <h1 id="Score_Text2">500</h1>
+                            <img id="youwontext" src="scr/assets/start/VictoryTexture.png" alt="">
+                        </div>
+                        <button onclick="restartGame()" id="restartButton">
+                            <img src="scr/assets/start/PlayAgainButton.png" alt="">
+                        </button>
+                    </div>
+                </div>
                 <div id="countdown">
                     <img id="number0" src="scr/assets/PNG/UI/numeral0.png" alt="">
-                    <img id="number1" src="scr/assets/PNG/UI/numeral1.png" alt="">
-                    <img id="number2" src="scr/assets/PNG/UI/numeral2.png" alt="">
-                    <img id="number3" src="scr/assets/PNG/UI/numeral3.png" alt="">
+                    <img id="number1" src="scr/assets/start/text1.png" alt="">
+                    <img id="number2" src="scr/assets/start/text2.png" alt="">
+                    <img id="number3" src="scr/assets/start/text3.png" alt="">
                 </div>
             </div>
         </div>
     </div>
 
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////                  scripts                               /////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////// -->
     <script src="scr/scripts/script.js"></script>
 
 </body>
-
 </html>

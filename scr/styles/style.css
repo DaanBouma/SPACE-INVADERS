@@ -1,7 +1,13 @@
+/* ////////////////////////////////////////////////////////// */
+/* ////////             Global                 ////////////// */
+/* ////////////////////////////////////////////////////////// */
+
 html,
 body {
   height: 100%;
   overflow: hidden;
+  text-decoration: none;
+  user-select: none;
 }
 
 body {
@@ -15,6 +21,10 @@ body {
   height: 100%;
 }
 
+/* ////////////////////////////////////////////////////////// */
+/* ////////             Game                   ////////////// */
+/* ////////////////////////////////////////////////////////// */
+
 .game-wrapper {
   flex: 1;
   display: flex;
@@ -23,17 +33,84 @@ body {
   background: #1a1a1a;
 }
 
+/* ////////////////////////////////////////////////////////// */
+
+#shield1 {
+  display: none;
+}
+
+#shield2 {
+  display: none;
+}
+
+#shield3 {
+  display: none;
+}
+.shield {
+  margin: 2.5px;
+}
+/* ////////////////////////////////////////////////////////// */
+
+
 .game {
   width: 800px;
   height: 600px;
-  background: url(../assets/Backgrounds/blue.png);
+  background: url(../assets/Backgrounds/dark.png);
   animation: scroll-background 5s linear infinite;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
 
-  transform: scale(1);
+  transform: scale(0.8);
 }
+
+/* ////////////////////////////////////////////////////////// */
+
+#icons {
+  width: 900px;
+  height: 600px;
+  position: absolute;
+  overflow: hidden;
+  display: none;
+  transform: scale(0.8) translateY(50px);
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.icons2 {
+  width: 200px;
+  height: 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  background: url(../assets/Backgrounds/blue.png);
+  animation: scroll-background 5s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+/* ////////////////////////////////////////////////////////// */
+#notification2 {
+  width: 800px;
+  height: 600px;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  transform: scale(0.9);
+  z-index: 1000;
+}
+
+#notification {
+  width: 800px;
+  height: 600px;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+/* ////////////////////////////////////////////////////////// */
 
 @keyframes scroll-background {
   from {
@@ -45,10 +122,12 @@ body {
   }
 }
 
+/* ////////////////////////////////////////////////////////// */
+
+
 .game .enemy {
   position: absolute;
   z-index: 100;
-  /* opacity: 0; */
 }
 
 .game .player {
@@ -75,12 +154,28 @@ body {
   width: 2.5px;
   z-index: 99;
 }
+
+.game .BLE5_enemy_laser {
+  position: absolute;
+  height: 50px;
+  width: 4px;
+  z-index: 99;
+}
+
+.game .enemy_laser_BLE3 {
+  position: absolute;
+  height: 30px;
+  width: 2.5px;
+  z-index: 99;
+}
+
 .enemy_laser_GE4 {
   position: absolute;
   height: 35px;
   width: 3.5px;
   z-index: 99;
 }
+
 .game .enemy_explosion {
   position: absolute;
   height: 30px;
@@ -89,6 +184,7 @@ body {
 
 .game {
   display: flex;
+  cursor: none;
 }
 
 #countdown {
@@ -98,19 +194,24 @@ body {
   transform: translate(-50%, -50%);
 }
 
+/* ////////////////////////////////////////////////////////// */
+
 #number0,
 #number1,
 #number2,
 #number3 {
   display: none;
-  transform: scale(1.2);
+  transform: scale(0.5);
+  z-index: 1210;
+
+/* ////////////////////////////////////////////////////////// */
 
 }
-
 #game-over {
   border: 2px #3E88A1 solid;
   border-radius: 20px;
   background: #1a1a1a;
+  cursor: default;
 
   width: 200px;
   height: 100px;
@@ -143,16 +244,31 @@ body {
 #game_over_total {
   display: none;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   z-index: 1000;
-  border: 2px #3E88A1 solid;
   background: #1a1a1a;
   width: 800px;
-  height: 595px;
+  height: 650px;
   justify-content: center;
 
+}
+
+#Victory_total {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  background: #1a1a1a;
+  width: 800px;
+  height: 650px;
+  justify-content: center;
+  cursor: pointer;
+  transition: 1s;
+}
+
+#startingbackground {
+  width: 800px;
+  height: 600px;
+  position: absolute;
+  z-index: 600;
 }
 
 #Restart_Button {
@@ -181,18 +297,39 @@ body {
   color: #ffffff;
 }
 
-#game_start_total {
+#game_controlls_total {
   display: flex;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   z-index: 1000;
-
   width: 200px;
   height: 250px;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  cursor: default;
+}
 
+#game_start_total {
+  background: #1a1a1a;
+  width: 800px;
+  cursor: default;
+  height: 600px;
+  z-index: 1000;
+  position: absolute;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+
+}
+
+#controllsbackground {
+  width: 800px;
+  height: 600px;
+  position: absolute;
 }
 
 #game-start {
@@ -228,7 +365,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 5000;
+  overflow: visible;
 }
+
 #bot_total {
   width: 800px;
   height: 50px;
@@ -236,44 +376,40 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 5000;
 }
-#game_start_total {
-  border: 2px #3E88A1 solid;
-  border-radius: 20px;
-  background: #1a1a1a;
 
-  width: 2800px;
-  height: 590px;
-  z-index: 1000;
-
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  cursor: default;
-flex-direction: column;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: white;
-  font-size: 25px;
-  font-weight: bold;
-  cursor: pointer;
-}
 #startbuttonimg {
+  display: flex;
   height: 40px;
   width: auto;
   margin: 0;
   background-color: transparent;
   border: none;
-cursor: pointer;
-transition: 9,5s;
-margin-top: 6px;
+  cursor: pointer;
+  transition: 9, 5s;
+  margin-top: 6px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+
 }
+
+#Score_Text {
+  margin-bottom: 50px;
+  margin-bottom: 25px;
+}
+
+#Score_Text2 {
+  margin-bottom: 50px;
+  margin-bottom: 25px;
+  color: white;
+}
+
 .startbuttonimg:active {
-  transform: translateY(-2px);
+  transform: scale(0.9);
 }
+
 .startbuttonimg2 {
   height: 10px;
   width: auto;
@@ -281,38 +417,112 @@ margin-top: 6px;
 
 .box_total_top {
   width: 300px;
-  height: 200px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  z-index: 200;
+}
+
+.box_total_top_Vic {
+  width: 300px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 200;
 }
 
 #highscore {
   display: none;
 }
-.box_total_bot {
-  width: 300px;
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
+
 #restartButton {
   background-color: transparent;
   border: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 200;
+  transform: translate(-50%, -50%);
 }
+
 #total_game_over_mid {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
+
 #restartButton {
   margin-top: 25px;
   transition: 0.5s;
-cursor: pointer;
+  cursor: pointer;
 }
+
 #restartButton:active {
-  transform: translateY(-10px);
+  transform: translate(-50%, -50%) scale(0.9);
 }
+
+#startimgstartingscreen {
+  width: auto;
+}
+
+#restartbackgroundimage {
+  width: 800px;
+  height: 600px;
+  z-index: 50;
+  position: absolute;
+}
+
+#victorybackgroundimage {
+  width: 800px;
+  height: 600px;
+  z-index: 50;
+  position: absolute;
+}
+
+#notificationBar {
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ////////////////////////////////////////////////////////// */
+
+#wave1Dif {
+  z-index: 300;
+}
+
+#wave2Dif {
+  z-index: 300;
+  display: none;
+}
+
+#wave3Dif {
+  z-index: 300;
+  display: none;
+}
+
+#wave4Dif {
+  z-index: 300;
+  display: none;
+}
+
+#wave5Dif {
+  z-index: 300;
+  display: none;
+}
+
+#wave6Dif {
+  z-index: 300;
+  display: none;
+}
+
+#wave7Dif {
+  z-index: 300;
+  display: none;
+}
+
+/* ////////////////////////////////////////////////////////// */
