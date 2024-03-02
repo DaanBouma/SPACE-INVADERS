@@ -1,5 +1,1 @@
-# SPACE-INVADERS
-JS-GAME-DAAN-BOUMA
-
-wil je even de levels bekijken typ in console: [godMode = true] of [godMode = false]
-wil je even de game freezen om iets te bekijken: [freeze = true] of [freeze = false]
+Ik heb deze game gemaakt voor mijn school opdracht. Hierbij moesten wij een javascript game gaan maken. Dus daarom heb ik Space-Invaders ook gekozen omdat het niet extreem lastig is en het is ook niet te makkelijk. Je kan ook even door de levels kijken door "godmode = true" te typen in de console. Deze console kan je openen met f12.
